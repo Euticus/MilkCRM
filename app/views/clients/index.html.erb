@@ -1,1 +1,18 @@
-<h1>this si s the index page of the clients folder </h1>
+<h1>These are our clients</h1><hr>
+
+<% @clients.each do |c| %>
+    <%= c.name %><br>
+    <%= c.phone %><br>
+    <%= c.address %><br>
+    <%= link_to "Edit Client", edit_client_path(c) %><br>
+    <%= link_to "Delete Client", client_path(c), method: :delete %>
+    <hr>
+        <% end %>
+
+
+    <%= link_to "Add Client", new_client_path %><br>
+    
+
+    <%= link_to "Back", home_path %>
+    <hr>
+

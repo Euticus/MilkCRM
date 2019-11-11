@@ -1,1 +1,14 @@
-<h1>This si the index page of the appointments folder</h1>
+<h1>These are all of your appointments </h1><hr>
+
+<% @appointments.each do |a| %>
+    <h2> Description: <%= a.description %></h2>
+    <h3> Time: <%= a.time %> </h3>
+    <p> Date: <%= a.date %> </p>
+    <p> Location: <%= a.location %></p>
+    <p> Client Name: <%= a.client.name %></p>
+    <p> Employee name: <%= a.employee.name %></p>
+    <%= link_to "Edit Appointment", edit_clientappointment_path(a) %><hr>
+    <% end %>
+
+
+    <%= link_to "back", home_path %>

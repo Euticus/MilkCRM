@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
     def index
+      @clients = Client.all
         
     end
 
@@ -15,7 +16,7 @@ class ClientsController < ApplicationController
       def create
         @client = Client.new(client_params)
         if @client.save
-          redirect_to clientappointment_path(@client)
+          redirect_to client_path(@client)
         else
           render :new
         end
@@ -32,10 +33,17 @@ class ClientsController < ApplicationController
         
     end
 
+    def destroy
+      @client = Client.find(params[:id])
+      @client.destroy
+      redirect_to clients_path
+
+    end 
+
     private 
 
     def client_params
-        params.require(:client).permit(:name, :phone, :number)
+        params.require(:client).permit(:name, :phone, :address)
     end
 
 end
