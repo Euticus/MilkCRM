@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :clients
   resources :clientappointments
   resources :employees
+  resources :customers
   get '/', to: "welcomes#index", as: "home"
   get '/products', to: "products#index", as: "products"
 

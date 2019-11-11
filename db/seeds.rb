@@ -23,7 +23,12 @@ Clientappointment.find_or_create_by(description: "Meeting", time: "2222222222", 
 Clientappointment.find_or_create_by(description: "Meeting", time: "4444444444", date: "date", location: "location four", client_id: 4 , employee_id: 2)
 Clientappointment.find_or_create_by(description: "Meeting", time: "6666666666", date: "date", location: "location five", client_id: 5, employee_id: 3)
 
-
+Client.find_or_create_by(name: "Liam", phone: "3333333333", address: "pomme@aol.com")
+Client.find_or_create_by(name: "Danny", phone: "1111111111", address: "chaussure@aol.com")
+Client.find_or_create_by(name: "Felix", phone: "2222222222", address: "petit@aol.com")
+Client.find_or_create_by(name: "Adam", phone: "4444444444", address: "lach@aol.com")
+Client.find_or_create_by(name: "Emily", phone: "5555555555", address: "ecran@aol.com")
+Client.find_or_create_by(name: "Dora", phone: "6666666666", address: "lunette@aol.com")
 
 
 
