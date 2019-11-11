@@ -1,9 +1,13 @@
 class ClientappointmentsController < ApplicationController
     def index 
+      @appointments = Clientappointment.all
+      @clients = Client.all
+      @employees = Employee.all 
 
     end
 
     def show 
+      @appointments = Clientappointment.find(params[:id])
 
     end 
 
@@ -21,6 +25,16 @@ class ClientappointmentsController < ApplicationController
         render :new
       end
 
+    end 
+
+    def edit 
+      @clientappointment = Clientappointment.find(params[:id])
+    end 
+
+    def update 
+      @clientappointment = Clientappointment.find(params[:id])
+      @clientappointment.update(clientappointment_params)
+      redirect_to clientappointments_path
     end 
 
     private 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_08_201336) do
+ActiveRecord::Schema.define(version: 2019_11_11_163449) do
 
   create_table "clientappointments", force: :cascade do |t|
     t.string "description"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_11_08_201336) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.string "type"
+    t.string "product_type"
     t.string "status"
     t.string "price"
     t.string "neighboorhood"
