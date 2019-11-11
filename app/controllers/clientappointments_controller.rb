@@ -1,17 +1,46 @@
 class ClientappointmentsController < ApplicationController
-    def index
-        
+    def index 
+      @appointments = Clientappointment.all
+      @clients = Client.all
+      @employees = Employee.all 
+
     end
 
-    def show
-        
-    end
+    def show 
+      @appointments = Clientappointment.find(params[:id])
 
-    def edit
-        
-    end
+    end 
 
-    def update
-        
-    end
+    def new 
+      @clientappointment = Clientappointment.new
+
+    end 
+
+    def create
+      @employees = Employee.all
+      @clientappointment = Clientappointment.new(clientappointment_params)
+      if @clientappointment.save
+        redirect_to clientappointment_path(@clientappointment)
+      else
+        render :new
+      end
+
+    end 
+
+    def edit 
+      @clientappointment = Clientappointment.find(params[:id])
+    end 
+
+    def update 
+      @clientappointment = Clientappointment.find(params[:id])
+      @clientappointment.update(clientappointment_params)
+      redirect_to clientappointments_path
+    end 
+
+    private 
+
+    def clientappointment_params
+        params.require(:clientappointment).permit(:description, :time, :date, :location, :client_id, :employee_id)
+    end 
+
 end

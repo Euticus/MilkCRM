@@ -1,0 +1,13 @@
+<h1> Edit Client </h1><hr>
+
+<%= form_for @client do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %><br>
+    <%= f.label :address %>
+    <%= f.text_field :address %><br>
+    <%= f.submit "Edit Client" %>
+    <% end %>
+<br><hr>    
+    <%= link_to "back", home_path %>

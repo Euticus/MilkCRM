@@ -1,0 +1,23 @@
+
+<h1> View Products </h1><hr><hr>
+
+<% @products.each do |p| %>
+    <h4> Name: <%= p.name %></h4>
+    <p> Location: <%= p.location %></p> 
+    <p> Product Type: <%= p.product_type %></p>
+    <p> Status: <%= p.status %></p>
+    <p> Neighboorhood: <%= p.neighboorhood %></p>
+   
+    <p> Client Name: <%= p.client.name %></p><hr>
+
+    <% end %>
+
+
+    <%= link_to "Back", home_path %>
+    
+
+
+
+
+
+
