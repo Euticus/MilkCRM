@@ -8,7 +8,7 @@
 
 Employee.find_or_create_by(name: "James", email: "james@james.com", phone: "6192839843", employee_number: 1234)
 Employee.find_or_create_by(name: "Tiffany", email: "TheyCallMeRDawg@james.com", phone: "123456789", employee_number: 1234)
-Employee.find_or_create_by(name: "Ritricia", email: "ritricia@james.com", phone: "8888888888", employee_number: 123
+Employee.find_or_create_by(name: "Ritricia", email: "ritricia@james.com", phone: "8888888888", employee_number: 123)
 
 Client.find_or_create_by(name: "John", phone: "3333333333", address: "tinypineapples@aol.com")
 Client.find_or_create_by(name: "Rebecca", phone: "1111111111", address: "hero@aol.com")

@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
 
-    has_many :employees, through :appointments
+    has_many :employees, through: :clientappointments
 
 end 
