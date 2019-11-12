@@ -1,7 +1,14 @@
-<h1>Customers</h1>
-<% @customer.each do |c| %>
-<%= c.name %>
-<%= c.phone %>
-<%= c.email %>
-<%= c.budget %>
-<% end %>
+<div class="row">
+    <h1>Customers</h1>
+    <% @customers.each do |c| %>
+        <div class="col-lg-3">
+            <div class="card">
+
+        
+    <%= c.name %>
+    <%= c.phone %>
+    <%= c.email %>
+    <%= c.budget %>
+</div></div>
+    <% end %>
+</div>

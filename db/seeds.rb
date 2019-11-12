@@ -14,12 +14,12 @@ e1 = Employee.find_or_create_by(name: "James", email: "james@james.com", phone: 
 e2 = Employee.find_or_create_by(name: "Tiffany", email: "TheyCallMeRDawg@james.com", phone: "123456789", employee_number: 1234)
 e3 = Employee.find_or_create_by(name: "Ritricia", email: "ritricia@james.com", phone: "8888888888", employee_number: 123)
 
-c1 = Client.find_or_create_by(name: "John", phone: "3333333333", address: "tinypineapples@aol.com")
-c2 = Client.find_or_create_by(name: "Rebecca", phone: "1111111111", address: "hero@aol.com")
-c3 = Client.find_or_create_by(name: "Roscoe", phone: "2222222222", address: "bobatit@aol.com")
-c4 = Client.find_or_create_by(name: "Laina", phone: "4444444444", address: "pragmatic@aol.com")
-c5 = Client.find_or_create_by(name: "Jeremy", phone: "5555555555", address: "Tina.Turner@aol.com")
-c6 = Client.find_or_create_by(name: "heather", phone: "6666666666", address: "PineTineapples@aol.com")
+c1 = Client.find_or_create_by(name: "John", phone: "3333333333", email: "tinypineapples@aol.com")
+c2 = Client.find_or_create_by(name: "Rebecca", phone: "1111111111", email: "hero@aol.com")
+c3 = Client.find_or_create_by(name: "Roscoe", phone: "2222222222", email: "bobatit@aol.com")
+c4 = Client.find_or_create_by(name: "Laina", phone: "4444444444", email: "pragmatic@aol.com")
+c5 = Client.find_or_create_by(name: "Jeremy", phone: "5555555555", email: "Tina.Turner@aol.com")
+c6 = Client.find_or_create_by(name: "heather", phone: "6666666666", email: "PineTineapples@aol.com")
 
 Clientappointment.find_or_create_by(description: "Meeting", time: "3333333333", date: "date", location: "location", client_id: c1.id, employee_id: e1.id)
 Clientappointment.find_or_create_by(description: "Meeting", time: "1111111111", date: "date", location: "location two", client_id: c2.id, employee_id: e1.id)

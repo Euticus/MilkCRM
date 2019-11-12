@@ -1,17 +1,20 @@
 
-<h1> View Products </h1><hr><hr>
-
+<h1> View Products </h1><hr>
+<div class="row">
 <% @products.each do |p| %>
-    <h4> Name: <%= p.name %></h4>
-    <p> Location: <%= p.location %></p> 
-    <p> Product Type: <%= p.product_type %></p>
-    <p> Status: <%= p.status %></p>
-    <p> Neighboorhood: <%= p.neighboorhood %></p>
-   
-    <p> Client Name: <%= p.client.name %></p><hr>
+    <div class="col-lg-4 py-2">
+    <div class="card">
+        <h4> Name: <%= p.name %></h4>
+        <p> Location: <%= p.location %></p> 
+        <p> Product Type: <%= p.product_type %></p>
+        <p> Status: <%= p.status %></p>
+        <p> Neighboorhood: <%= p.neighboorhood %></p>
+        <p> Client Name: <%= p.client.name %></p>
+    </div>
+</div>
 
     <% end %>
-
+</div>
 
     <%= link_to "Back", home_path %>
     

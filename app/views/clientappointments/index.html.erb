@@ -1,14 +1,20 @@
 <h1>These are the appointments with Clients</h1><hr>
-
+<div class="row">
 <% @appointments.each do |a| %>
-    <h2> Description: <%= a.description %></h2>
-    <h3> Time: <%= a.time %> </h3>
-    <p> Date: <%= a.date %> </p>
-    <p> Location: <%= a.location %></p>
-    <p> Client Name: <%= a.client.name %></p>
-    <p> Employee name: <%= a.employee.name %></p>
-    <%= link_to "Edit Appointment", edit_clientappointment_path(a) %><hr>
+    <div class="col-lg-4 py-2">
+        <div class="card" >
+        <h4> Description: <%= a.description %></h4>
+        <h4> Time: <%= a.time %> </h4>
+        <p> Date: <%= a.date %> </p>
+        <p> Location: <%= a.location %></p>
+        <p> Client Name: <%= a.client.name %></p>
+        <p> Employee name: <%= a.employee.name %></p>
+        <hr>
+         <%= link_to "Edit Appointment", edit_clientappointment_path(a) %>
+        </div>
+    </div>
     <% end %>
+</div>
 
 
     <%= link_to "back", home_path %>
