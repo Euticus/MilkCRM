@@ -1,3 +1,5 @@
 class Customer < ApplicationRecord
-    has_many :customer, through: :customerappointments
+    has_many :employees, through: :customerappointments
+
+    validates :email, confirmation: true
 end

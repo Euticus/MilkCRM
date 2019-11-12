@@ -1,13 +1,13 @@
-<h1>These are the appointments with Clients</h1><hr>
+<h1>These are your appointments with Customers</h1><hr>
 
 <% @appointments.each do |a| %>
     <h2> Description: <%= a.description %></h2>
     <h3> Time: <%= a.time %> </h3>
     <p> Date: <%= a.date %> </p>
     <p> Location: <%= a.location %></p>
-    <p> Client Name: <%= a.client.name %></p>
+    <p> Customer Name: <%= a.customer.name %></p>
     <p> Employee name: <%= a.employee.name %></p>
-    <%= link_to "Edit Appointment", edit_clientappointment_path(a) %><hr>
+    <%= link_to "Edit Appointment", edit_customerappointment_path(a) %><hr>
     <% end %>
 
 

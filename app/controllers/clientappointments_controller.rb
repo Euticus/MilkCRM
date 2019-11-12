@@ -3,6 +3,7 @@ class ClientappointmentsController < ApplicationController
       @appointments = Clientappointment.all
       @clients = Client.all
       @employees = Employee.all 
+      @customers = Customer.all
 
     end
 
@@ -13,7 +14,7 @@ class ClientappointmentsController < ApplicationController
 
     def new 
       @clientappointment = Clientappointment.new
-
+      @customerappointment = Customerappointment.new
     end 
 
     def create

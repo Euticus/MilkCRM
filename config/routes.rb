@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/clientappointments/:id', to: 'clientappointments#destroy', as: 'delete_clientappointment'
   resources :employees
   resources :customers
+  resources :customerappointments
   get '/', to: "welcomes#index", as: "home"
   get '/products', to: "products#index", as: "products"
 

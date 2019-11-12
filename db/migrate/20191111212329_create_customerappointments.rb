@@ -1,6 +1,6 @@
-class CreateCustomerAppoinments < ActiveRecord::Migration[6.0]
+class CreateCustomerappointments < ActiveRecord::Migration[6.0]
   def change
-    create_table :customer_appoinments do |t|
+    create_table :customerappointments do |t|
       t.string :description
       t.string :time
       t.string :date

@@ -7,6 +7,19 @@ class CustomersController < ApplicationController
         @customer = Customer.find(params[:id])
     end
 
+    def new 
+        @customer = Customer.new
+      end 
+  
+      def create
+        @customer = Customer.new(customer_params)
+        if @customer.save
+          redirect_to client_path(@customer)
+        else
+          render :new
+        end
+      end
+
     def edit
         @customer = Customer.find(params[:id])
     end
@@ -16,6 +29,8 @@ class CustomersController < ApplicationController
         @customer.update(customer_params)
         redirect_to customers_path
     end
+
+
 
     private
 
