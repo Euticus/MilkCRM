@@ -1,7 +1,10 @@
-<h1>Customers</h1>
-<% @customer.each do |c| %>
-<%= c.name %>
-<%= c.phone %>
-<%= c.email %>
-<%= c.budget %>
+<h1>Customers</h1><hr>
+<% @customers.each do |c| %>
+<p> Name: <%= c.name %></p>
+<p> Phone: <%= c.phone %></p>
+<p> Email: <%= c.email %></p>
+<p> Budget: <%= c.budget %></p><hr>
 <% end %>
+
+
+<%= link_to "Back", home_path %>

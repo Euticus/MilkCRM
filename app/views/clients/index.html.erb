@@ -3,7 +3,7 @@
 <% @clients.each do |c| %>
     <%= c.name %><br>
     <%= c.phone %><br>
-    <%= c.address %><br>
+    <%= c.email %><br>
     <%= link_to "Edit Client", edit_client_path(c) %><br>
     <%= link_to "Delete Client", client_path(c), method: :delete %>
     <hr>
