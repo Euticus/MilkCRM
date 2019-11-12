@@ -1,4 +1,38 @@
-<h1>Welcome to milkCRM</h1><hr>   
+<h1>Welcome to milkCRM</h1><hr>
+<div class="col-lg-6">
+<div class="row">
+        <% @appointments.each do |a| %>
+            <div class="col-lg-6 py-2">
+                <div class="card" >
+                <h4> Description: <%= a.description %></h4>
+                <h4> Time: <%= a.time %> </h4>
+                <p> Date: <%= a.date %> </p>
+                <p> Location: <%= a.location %></p>
+                <p> Client Name: <%= a.client.name %></p>
+                <p> Employee name: <%= a.employee.name %></p>
+                <hr>
+                 <%= link_to "Edit Appointment", edit_clientappointment_path(a) %>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+        <div class="col-lg-6">
+        <div class="row">
+                <% @clients.each do |c| %>
+                    <div class="col-lg-6 py-4">
+                        <div class="card" style="padding:10px">
+                    <h4><%= c.name %></h4>
+                    <p>Phone: <%= c.phone %></p>
+                    <p>Email: <%= c.email %></p>
+                    <hr>
+                    <%= link_to "Edit Client", edit_client_path(c) %><br>
+                    <%= link_to "Delete Client", client_path(c), method: :delete %>
+                    </div>
+                </div>
+                        <% end %>
+                </div>
+            </div>
 
 <%= link_to "View your Clients here", clients_path %><br>
 <%= link_to "View your Customers here", customers_path %><br>

@@ -1,14 +1,17 @@
 <h1>These are our clients</h1><hr>
-
+<div class="row">
 <% @clients.each do |c| %>
-    <%= c.name %><br>
-    <%= c.phone %><br>
-    <%= c.email %><br>
+    <div class="col-lg-4 py-4">
+        <div class="card" style="padding:10px">
+    <h4><%= c.name %></h4>
+    <p>Phone: <%= c.phone %></p>
+    <p>Email: <%= c.email %></p>
+    <hr>
     <%= link_to "Edit Client", edit_client_path(c) %><br>
     <%= link_to "Delete Client", client_path(c), method: :delete %>
-    <hr>
+    </div>
+</div>
         <% end %>
-    
 </div>
 
 
