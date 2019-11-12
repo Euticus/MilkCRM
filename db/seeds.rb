@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
+
+
 e1 = Employee.find_or_create_by(name: "James", email: "james@james.com", phone: "6192839843", employee_number: 1234)
 e2 = Employee.find_or_create_by(name: "Tiffany", email: "TheyCallMeRDawg@james.com", phone: "123456789", employee_number: 1234)
 e3 = Employee.find_or_create_by(name: "Ritricia", email: "ritricia@james.com", phone: "8888888888", employee_number: 123)
@@ -29,6 +33,7 @@ Product.find_or_create_by(name: "404 E 122nd st Apt 4" , location: "404 E 122nd 
 Product.find_or_create_by(name: "123 Madison ave", location: "123 Madison ave", product_type: "Condo", status: "On Market", neighboorhood: "Greenwich Village" , client_id: c3.id)
 Product.find_or_create_by(name: "727 Madison ave", location: "727 Madison ave", product_type: "Rental" , status: "Application pending", neighboorhood: "Upper East Side" , client_id: c4.id)
 Product.find_or_create_by(name: "1200 Broadway", location: "1200 Broadway", product_type: "Building" , status: "Off Market", neighboorhood: "Upper West Side" , client_id: c5.id)
+
 
 
 

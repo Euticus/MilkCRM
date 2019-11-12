@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :clientappointments, except: :destroy
   get '/clientappointments/:id', to: 'clientappointments#destroy', as: 'delete_clientappointment'
   resources :employees
+  resources :customers
   get '/', to: "welcomes#index", as: "home"
   get '/products', to: "products#index", as: "products"
 
