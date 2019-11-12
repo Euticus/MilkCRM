@@ -1,5 +1,15 @@
 <h1>Create a New Client</h1>
+
+
 <%= form_for @client do |f| %>
+  <% if @client.errors.any? %>
+  <h2>Errors: </h2>
+  <% @client.errors.full_messages.each do |message| %>
+  <ul>
+    <li> <%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
   <%= f.label :name %>:
   <%= f.text_field :name%><br />
 
@@ -7,7 +17,7 @@
   <%= f.text_field :phone %><br />
 
   <%= f.label :email %>:
-  <%= f.text_field :client, :email %><br />
+  <%= f.text_field :email %><br />
 
   <%= f.submit %>
 <% end %>

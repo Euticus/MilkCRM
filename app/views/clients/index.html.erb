@@ -1,32 +1,12 @@
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Clients</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group mr-2">
-            <button class="btn btn-sm btn-outline-secondary">Share</button>
-            <button class="btn btn-sm btn-outline-secondary">Export</button>
-          </div>
-          <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-          </button>
-        </div>
-      </div>
+<h1>These are our clients</h1><hr>
 
-<div class="row">
-    
-    <% @clients.each do |c| %>
-        <div class="col-lg-4 py-2">
-            <div class="card">
-            <h2><%= c.name %></h2>
-            <p><%= c.phone %></p>
-            <p> <%= c.email %></p>
-             
-            
-        <hr>
-        <%= link_to "Edit", edit_client_path(c)%>
-        <%= link_to "Delete", client_path(c), method: :delete%>
-        </div>
-    </div>
+<% @clients.each do |c| %>
+    <%= c.name %><br>
+    <%= c.phone %><br>
+    <%= c.email %><br>
+    <%= link_to "Edit Client", edit_client_path(c) %><br>
+    <%= link_to "Delete Client", client_path(c), method: :delete %>
+    <hr>
         <% end %>
     
 </div>
