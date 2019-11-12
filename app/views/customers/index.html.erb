@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="row">
     <h1>Customers</h1>
     <% @customers.each do |c| %>
@@ -12,16 +12,5 @@
     <%= c.budget %>
 </div></div>
     <% end %>
+    <%= link_to "Back", home_path %>
 </div>
-=======
-<h1>Customers</h1><hr>
-<% @customers.each do |c| %>
-<p> Name: <%= c.name %></p>
-<p> Phone: <%= c.phone %></p>
-<p> Email: <%= c.email %></p>
-<p> Budget: <%= c.budget %></p><hr>
-<% end %>
-
-
-<%= link_to "Back", home_path %>
->>>>>>> 4f07cc9980053dd9381390d3f6386b1f76ddd384
