@@ -3,7 +3,7 @@
     <div class="card">
     <h2>Client Appointment </h2>
     <hr>
-    <%= form_for @clientappointment do |f| %>
+    <%= form_for @clientappointment, url: clientappointments_path do |f| %>
     <%= f.label :description %>
     <%= f.text_area :description, placeholder: "Enter Description" %><br>
     <%= f.label :time %>
@@ -26,7 +26,7 @@
     <div class="card">
     <h2>Customer Appointment </h2>
     <hr>
-    <%= form_for @customerappointment do |f| %>
+    <%= form_for @customerappointment, url: customerappointments_path do |f| %>
     <%= f.label :description %>
     <%= f.text_area :description, placeholder: "Enter Description" %><br>
     <%= f.label :time %>
