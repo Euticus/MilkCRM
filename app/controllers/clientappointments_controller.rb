@@ -18,11 +18,13 @@ class ClientappointmentsController < ApplicationController
     end 
 
     def create
+  
       @employees = Employee.all
       @clientappointment = Clientappointment.new(clientappointment_params)
       if @clientappointment.save
-        redirect_to clientappointment_path(@clientappointment)
+        redirect_to clientappointments_path
       else
+        @customerappointment = Customerappointment.new 
         render :new
       end
 

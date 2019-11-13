@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-lg-6">
-<h1> Create a new Appointment </h1><hr>
+<h1> Create a CLIENT Appointment </h1><hr>
 
-<%= form_for @clientappointment do |f| %>
+<%= form_for @clientappointment, url: clientappointments_path do |f| %>
 
     <%= f.label :description %>
     <%= f.text_field :description %><br>
@@ -19,9 +19,9 @@
 
 </div>
 <div class="col-lg-6">
-    <h1> Create a new Appointment </h1>
+    <h1> Create a CUSTOMER Appointment </h1>
     <hr>
-<%= form_for @customerappointment do |f| %>
+<%= form_for @customerappointment, url: customerappointments_path do |f| %>
   
     <%= f.label :description %>
     <%= f.text_field :description %><br>

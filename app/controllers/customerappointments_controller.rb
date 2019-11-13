@@ -12,7 +12,7 @@ class CustomerappointmentsController < ApplicationController
         @employees = Employee.all
         @customerappointment = Customerappointment.new(customerappointment_params)
         if @customerappointment.save
-          redirect_to customerappointment_path(@customerappointment)
+          redirect_to customerappointments_path
         else
           render :new
         end
