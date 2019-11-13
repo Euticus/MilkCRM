@@ -21,7 +21,9 @@ class ClientappointmentsController < ApplicationController
   
       @employees = Employee.all
       @clientappointment = Clientappointment.new(clientappointment_params)
+ 
       if @clientappointment.save
+        ClientappointmentMailer.welcome_email(@clientappointment.client).deliver_now
         redirect_to clientappointments_path
       else
         @customerappointment = Customerappointment.new 
