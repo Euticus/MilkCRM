@@ -1,15 +1,18 @@
-<h1>Create a New Client</h1>
-<%= form_for @client do |f| %>
-  <%= f.label :name %>:
-  <%= f.text_field :name%><br />
+<div class="col-lg-4 offset-lg-4 py-4">
+<div class="card">
+  <h2 class="text-center">Update Client</h2>
+  <%= form_for @client do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name%><br />
 
-  <%= f.label :phone %>:
-  <%= f.text_field :phone %><br />
+    <%= f.label :phone %>
+    <%= f.text_field :phone %><br />
 
-  <%= f.label :email %>:
-  <%= f.text_field :email %><br />
+    <%= f.label :email %>
+    <%= f.text_field :email %><br />
 
-  <%= f.submit %>
-<% end %>
-
+    <%= f.submit %>
+  <% end %>
+</div>
+</div>
 <%= link_to "back", home_path %>

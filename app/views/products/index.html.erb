@@ -4,7 +4,8 @@
 <% @products.each do |p| %>
     <div class="col-lg-4 py-2">
     <div class="card">
-        <h4> Name: <%= p.name %></h4>
+        <h4 class="text-center"><span class="feather-32" data-feather="home"> </span><br> Name: <%= p.name %></h4>
+        <hr>
         <p> Location: <%= p.location %></p> 
         <p> Product Type: <%= p.product_type %></p>
         <p> Status: <%= p.status %></p>

@@ -1,16 +1,19 @@
-
+<h1>Customers</h1>
+<hr>
 <div class="row">
-    <h1>Customers</h1>
     <% @customers.each do |c| %>
-        <div class="col-lg-3">
-            <div class="card">
-
+    <div class="col-lg-4 py-2">
+        <div class="card">
+        <h4 class="text-center"><span class="feather-32" data-feather="user"> </span><br><%= c.name %></h4>
+        <hr>
+        <p>Phone: <%= c.phone %></p>
+        <p>Email: <%= c.email %></p>
+        <p>Budget: <%= c.budget %></p>
+        <hr>
+        <%= link_to "Edit", edit_customer_path(c), class: "card-link" %><br>
+        </div>
         
-    <%= c.name %>
-    <%= c.phone %>
-    <%= c.email %>
-    <%= c.budget %>
-</div></div>
+    </div>
     <% end %>
-    <%= link_to "Back", home_path %>
 </div>
+<%= link_to "Back", home_path %>

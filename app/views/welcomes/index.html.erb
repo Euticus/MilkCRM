@@ -1,15 +1,26 @@
 <h1>Welcome to milkCRM</h1><hr>
-<div class="col-lg-6">
 <div class="row">
+<div class="col-lg-8">
+<div class="row">
+        <h2>Appointments</h2>
         <% @appointments.each do |a| %>
-            <div class="col-lg-6 py-2">
+            <div class="col-lg-12 py-2">
                 <div class="card" >
+                <div class="row">
+                <div class="col-lg-4 text-center">
+                        
+                    <h4 class="time-box"><span class="feather-32" data-feather="calendar"></span> 
+                        <br><%= a.date %> </h4>
+                </div>
+                <div class="col-lg-8">
                 <h4> Description: <%= a.description %></h4>
-                <h4> Time: <%= a.time %> </h4>
-                <p> Date: <%= a.date %> </p>
+                <hr>
+                <p> Time: <%= a.time %> </p>
                 <p> Location: <%= a.location %></p>
                 <p> Client Name: <%= a.client.name %></p>
                 <p> Employee name: <%= a.employee.name %></p>
+                </div>
+                </div>
                 <hr>
                  <%= link_to "Edit Appointment", edit_clientappointment_path(a) %>
                 </div>
@@ -17,29 +28,21 @@
             <% end %>
         </div>
     </div>
-        <div class="col-lg-6">
+        <div class="col-lg-4">
         <div class="row">
+            <h2>Clients</h2>
                 <% @clients.each do |c| %>
-                    <div class="col-lg-6 py-4">
-                        <div class="card" style="padding:10px">
-                    <h4><%= c.name %></h4>
+                    <div class="col-lg-12 py-2">
+                        <div class="card">
+                    <h4 class="text-center"><%= c.name %></h4>
+                    <hr>
                     <p>Phone: <%= c.phone %></p>
                     <p>Email: <%= c.email %></p>
                     <hr>
                     <%= link_to "Edit Client", edit_client_path(c) %><br>
-                    <%= link_to "Delete Client", client_path(c), method: :delete %>
                     </div>
                 </div>
                         <% end %>
                 </div>
             </div>
-
-<%= link_to "View your Clients here", clients_path %><br>
-<%= link_to "View your Customers here", customers_path %><br>
-<%= link_to "View your Appointments", clientappointments_path %><br>
-<%= link_to "View products", products_path %><br><hr>
-<%= link_to "Create a Customer", new_customer_path %><br>
-<%= link_to "Create a Client", new_client_path %><br>
-<%= link_to "Create an Appointment", new_clientappointment_path %><br>
-
-<hr>
+        </div>

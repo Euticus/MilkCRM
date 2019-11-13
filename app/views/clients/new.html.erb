@@ -1,6 +1,7 @@
-<h1>Create a New Client</h1>
-
-
+<div class="col-lg-4 offset-lg-4 py-4">
+<div class="card">
+<h2 class="text-center">New Client</h2>
+<hr>
 <%= form_for @client do |f| %>
   <% if @client.errors.any? %>
   <h2>Errors: </h2>
@@ -10,16 +11,17 @@
     <% end %>
   </ul>
 <% end %>
-  <%= f.label :name %>:
-  <%= f.text_field :name%><br />
+  <%= f.label :name %>
+  <%= f.text_field :name , placeholder: "Enter Name" %><br />
 
-  <%= f.label :phone %>:
-  <%= f.text_field :phone %><br />
+  <%= f.label :phone %>
+  <%= f.text_field :phone, placeholder: "(555)555-5555" %><br />
 
-  <%= f.label :email %>:
-  <%= f.text_field :email %><br />
+  <%= f.label :email %>
+  <%= f.text_field :email, placeholder: "user@domain.com" %><br />
 
   <%= f.submit %>
 <% end %>
-
+</div>
+</div>
 <%= link_to "back", home_path %>

@@ -1,18 +1,23 @@
 class CustomerappointmentsController < ApplicationController
 
-    def index 
+    def index
+      @appointments = Customerappointment.all
 
     end 
 
     def show 
+      @appointments = Custemerappointment.find(params[:id])
+    end
 
-    end 
+    def edit
+      @customerappointment = Customerappointment.find(params[:id])
+    end
 
     def create
         @employees = Employee.all
         @customerappointment = Customerappointment.new(customerappointment_params)
         if @customerappointment.save
-          redirect_to customerappointment_path(@customerappointment)
+          redirect_to customerappointments_path
         else
           render :new
         end

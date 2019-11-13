@@ -1,5 +1,6 @@
 body {
   font-size: .875rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .feather {
@@ -7,6 +8,34 @@ body {
   height: 16px;
   vertical-align: text-bottom;
 }
+
+h1,h2,h3,h4{
+  color: #00b8ff;
+}
+
+.time {
+  color: rgb(114, 110, 110);
+}
+
+.feather-32{
+  width: 32px;
+  height: 32px;
+}
+
+.time-box{
+  border: #00b8ff 1px solid;
+  padding: 10px;
+  color: #fff;
+  background-color: #00b8ff;
+}
+
+hr { background-color: #99e9c7 ; height: 1px; border: 0; }
+
+a{
+  color: #00b8ff
+}
+
+
 
 /*
  * Sidebar
@@ -104,4 +133,31 @@ body {
   -moz-box-shadow: 2px 10px 14px -7px rgba(0,0,0,0.75);
   box-shadow: 2px 10px 14px -7px rgba(0,0,0,0.75);
   padding: 20px;
+  border: #99e9c7 2px solid;
+}
+
+.card p{
+  margin: 0px;
+}
+
+.navbar-custom {
+  background-color: #00b8ff;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: rgba(255,255,255,.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: rgba(255,255,255,.5);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: #ffffff;
+}
+
+label{
+  width: 100px;
 }

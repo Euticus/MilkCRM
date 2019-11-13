@@ -1,10 +1,11 @@
-<h1>These are the appointments with Clients</h1><hr>
+<h1>Client Appointments</h1><hr>
 <div class="row">
 <% @appointments.each do |a| %>
     <div class="col-lg-4 py-2">
         <div class="card" >
-        <h4> Description: <%= a.description %></h4>
-        <h4> Time: <%= a.time %> </h4>
+        <h4 class="text-center"><span class="feather-32" data-feather="calendar"> </span><br><%= a.description %></h4>
+        <hr>
+        <h4 class="time"> Time: <%= a.time %> </h4>
         <p> Date: <%= a.date %> </p>
         <p> Location: <%= a.location %></p>
         <p> Client Name: <%= a.client.name %></p>

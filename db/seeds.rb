@@ -34,7 +34,12 @@ Product.find_or_create_by(name: "123 Madison ave", location: "123 Madison ave", 
 Product.find_or_create_by(name: "727 Madison ave", location: "727 Madison ave", product_type: "Rental" , status: "Application pending", neighboorhood: "Upper East Side" , client_id: c4.id)
 Product.find_or_create_by(name: "1200 Broadway", location: "1200 Broadway", product_type: "Building" , status: "Off Market", neighboorhood: "Upper West Side" , client_id: c5.id)
 
-
+Customer.find_or_create_by(name: "Liam", phone: "3333333333", email: "pomme@aol.com", budget:"10000")
+Customer.find_or_create_by(name: "Danny", phone: "1111111111", email: "chaussure@aol.com", budget:"15000")
+Customer.find_or_create_by(name: "Felix", phone: "2222222222", email: "petit@aol.com", budget:"16000")
+Customer.find_or_create_by(name: "Adam", phone: "4444444444", email: "lach@aol.com", budget:"17000")
+Customer.find_or_create_by(name: "Emily", phone: "5555555555", email: "ecran@aol.com", budget:"80000")
+Customer.find_or_create_by(name: "Dora", phone: "6666666666", email: "lunette@aol.com", budget:"90000")
 
 
 

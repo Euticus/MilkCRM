@@ -1,40 +1,47 @@
-<div class="row">
+<div class="row py-4">
     <div class="col-lg-6">
-<h1> Create a new Appointment </h1><hr>
-
-<%= form_for @clientappointment do |f| %>
-
+    <div class="card">
+    <h2>Client Appointment </h2>
+    <hr>
+    <%= form_for @clientappointment do |f| %>
     <%= f.label :description %>
-    <%= f.text_field :description %><br>
+    <%= f.text_area :description, placeholder: "Enter Description" %><br>
     <%= f.label :time %>
-    <%= f.text_field :time %><br>
+    <%= f.text_field :time, placeholder: "HH:MM" %><br>
     <%= f.label :date %>
-    <%= f.text_field :date %><br>
+    <%= f.text_field :date, placeholder: "MM/DD/YYYY" %><br>
     <%= f.label :location %>
-    <%= f.text_field :location %><br>
-    <%= f.collection_select :client_id, Client.all, :id, :name, prompt: true %><br><br>
+    <%= f.text_area :location, placeholder: "Enter Location" %><br>
+    <%= f.label :client %>
+    <%= f.collection_select :client_id, Client.all, :id, :name, prompt: true %><br>
+    <%= f.label :employee_id %>
     <%= f.collection_select :employee_id, Employee.all, :id, :name, prompt: true %><br><br>
     <%= f.submit "Create Appointment" %>
+    
     <% end %>
+</div>
 
 </div>
 <div class="col-lg-6">
-    <h1> Create a new Appointment </h1>
+    <div class="card">
+    <h2>Customer Appointment </h2>
     <hr>
-<%= form_for @customerappointment do |f| %>
-  
+    <%= form_for @customerappointment do |f| %>
     <%= f.label :description %>
-    <%= f.text_field :description %><br>
+    <%= f.text_area :description, placeholder: "Enter Description" %><br>
     <%= f.label :time %>
-    <%= f.text_field :time %><br>
+    <%= f.text_field :time, placeholder: "HH:MM" %><br>
     <%= f.label :date %>
-    <%= f.text_field :date %><br>
+    <%= f.text_field :date, placeholder: "MM/DD/YYYY" %><br>
     <%= f.label :location %>
-    <%= f.text_field :location %><br>
-    <%= f.collection_select :customer_id, Customer.all, :id, :name, prompt: true %><br><br>
+    <%= f.text_area :location, placeholder: "Enter Location"  %><br>
+    <%= f.label :customer %>
+    <%= f.collection_select :customer_id, Customer.all, :id, :name, prompt: true %><br>
+    <%= f.label :employee_id %>
     <%= f.collection_select :employee_id, Employee.all, :id, :name, prompt: true %><br><br>
     <%= f.submit "Create Appointment" %>
     <% end %>
+</div>
 <br> 
 </div>
 </div> 
