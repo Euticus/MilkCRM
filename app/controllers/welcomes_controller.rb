@@ -4,6 +4,7 @@ class WelcomesController < ApplicationController
         @employees = Employee.all
         @clients = Client.all
         @appointments = Clientappointment.all
+        @employee = Employee.find(session[:employee_id])
         
     end
 

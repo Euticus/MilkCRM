@@ -1,4 +1,5 @@
 class Employee < ApplicationRecord
+    has_secure_password
 
     has_many :clients, through: :clientappointments
     has_many :customers, through: :customerappointments
