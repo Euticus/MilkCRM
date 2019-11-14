@@ -18,10 +18,8 @@ class ClientappointmentsController < ApplicationController
     end 
 
     def create
-  
       @employees = Employee.all
       @clientappointment = Clientappointment.new(clientappointment_params)
- 
       if @clientappointment.save
         ClientappointmentMailer.welcome_email(@clientappointment.client).deliver_now
         redirect_to clientappointments_path
@@ -29,7 +27,6 @@ class ClientappointmentsController < ApplicationController
         @customerappointment = Customerappointment.new 
         render :new
       end
-
     end 
 
     def edit 

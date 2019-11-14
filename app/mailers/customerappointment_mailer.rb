@@ -1,9 +1,9 @@
 class CustomerappointmentMailer < ApplicationMailer
-    default from: 'jayr.stewart@live.com'
  
-  def welcome_email(user)
-    @user = params[:customer]
-    @url  = '/'
-    mail(to: @user.email, subject: 'Appointment created using MilkCRM')
-  end
+    def welcome_email(user)
+      @user = user
+
+      mail(to: @user.email, subject: 'Welcome to MilkCRM')
+    end
+
 end
