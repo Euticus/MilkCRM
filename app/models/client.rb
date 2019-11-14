@@ -1,9 +1,10 @@
 class Client < ApplicationRecord
 
-    has_many :employees, through: :clientappointments
+    has_many :employees, through: :clientappointments, dependent: :destroy
     has_many :products
 
-    validates :email, presence: true, uniqueness: true, 'valid_email_2/email': {message: 'Must be valid syntax: youremail@domain.com'}
-    validates :phone, presence: true, uniqueness: true, length: { is: 10 }
+    validates :name, presence: true 
+    validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP } # I think RFC 5322
+    validates_format_of :phone, presence: true, :with => /\(?[0-9]{3}\)?-[0-9]{3}-[0-9]{4}/, :message => "Number must be XXX-XXX-XXXX"
 
 end 

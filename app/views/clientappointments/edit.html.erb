@@ -4,6 +4,14 @@
         <h1> Edit Appointment </h1><hr>
 
         <%= form_for @clientappointment do |f| %>
+            <% if @clientappointment.errors.any? %>
+            <h2>Errors: </h2>
+            <% flash[:error].each do |message| %>
+            <ul>
+              <li> <%= message %></li>
+              <% end %>
+              <% end %>
+            </ul>
             <%= f.label :description %>
             <%= f.text_field :description %><br>
             <%= f.label :time %>

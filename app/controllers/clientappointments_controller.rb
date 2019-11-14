@@ -24,8 +24,9 @@ class ClientappointmentsController < ApplicationController
         ClientappointmentMailer.welcome_email(@clientappointment.client).deliver_now
         redirect_to clientappointments_path
       else
+        flash[:client_error] = @clientappointment.errors.full_messages
         @customerappointment = Customerappointment.new 
-        render :new
+        redirect_to new_clientappointment_path
       end
     end 
 
@@ -35,8 +36,12 @@ class ClientappointmentsController < ApplicationController
 
     def update 
       @clientappointment = Clientappointment.find(params[:id])
-      @clientappointment.update(clientappointment_params)
-      redirect_to clientappointments_path
+      if @clientappointment.update(clientappointment_params)
+         redirect_to clientappointments_path
+      else 
+        flash[:error] = @clientappointment.errors.full_messages
+        render :edit
+      end
     end 
 
     private 

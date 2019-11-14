@@ -2,6 +2,6 @@ class Customerappointment < ApplicationRecord
     belongs_to :customer
     belongs_to :employee
 
-    validates_date :date, required: true 
-    validates_time :time, required: true 
+    validates_date :date, :after => Time.now, required: true 
+    validates_time :time, :after => Time.now, required: true 
 end

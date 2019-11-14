@@ -2,6 +2,14 @@
 <div class="card">
   <h2 class="text-center">Update Client</h2>
   <%= form_for @client do |f| %>
+    <% if @client.errors.any? %>
+    <h2>Errors: </h2>
+    <% @client.errors.full_messages.each do |message| %>
+    <ul>
+      <li> <%= message %></li>
+      <% end %>
+      <% end %>
+    </ul>
     <%= f.label :name %>
     <%= f.text_field :name%><br />
 
