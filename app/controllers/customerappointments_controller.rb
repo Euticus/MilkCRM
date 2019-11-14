@@ -1,7 +1,10 @@
 class CustomerappointmentsController < ApplicationController
 
-    def index
+    def index 
       @appointments = Customerappointment.all
+      @clients = Client.all
+      @employees = Employee.all 
+      @customers = Customer.all
 
     end 
 
@@ -17,11 +20,12 @@ class CustomerappointmentsController < ApplicationController
         @employees = Employee.all
         @customerappointment = Customerappointment.new(customerappointment_params)
         if @customerappointment.save
+          CustomerappointmentMailer.welcome_email(@customerappointment.customer).deliver_now
           redirect_to customerappointments_path
         else
+
           render :new
         end
-  
       end 
 
 private 
