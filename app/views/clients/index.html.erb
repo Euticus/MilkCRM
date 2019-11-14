@@ -9,8 +9,10 @@
         <p>Phone: <%= c.phone %></p>
         <p>Email: <%= c.email %></p>
         <hr>
-        <%= link_to "Edit", edit_client_path(c), class: "card-link" %><br>
-        <%= link_to "Delete", client_path(c), method: :delete, class: "card-link"  %>
+        <div class="btn-group">
+            <%= link_to "Edit", edit_client_path(c), class: "btn btn-outline-primary btn-sm" %>
+            <%= link_to "Delete", client_path(c), method: :delete, class: "btn btn-outline-success btn-sm"  %>
+        </div>
     </div>
 </div>
         <% end %>
