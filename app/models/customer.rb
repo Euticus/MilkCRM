@@ -1,5 +1,6 @@
 class Customer < ApplicationRecord
     has_many :employees, through: :customerappointments, dependent: :destroy
+    has_one_attached :image
 
     validates :name, presence: true 
     validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP } # I think RFC 8068                                                         
