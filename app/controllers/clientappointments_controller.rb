@@ -1,6 +1,6 @@
 class ClientappointmentsController < ApplicationController
     def index 
-      @appointments = Clientappointment.all
+      @clientappointments = Clientappointment.all
       @clients = Client.all
       @employees = Employee.all 
       @customers = Customer.all
