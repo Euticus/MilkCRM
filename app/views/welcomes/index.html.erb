@@ -3,8 +3,76 @@
 <div class="col-lg-8">
 <div class="row">
 <h1> Welcome <%= @employee.name %> </h1>
-        <h2>Appointments</h2>
-        <% @appointments.each do |a| %>
+<div class="container">
+<div class="row">
+  <div class="col-xs-12 ">
+
+      <h2>Client Appointments</h2>
+      <% @clientappointments.each do |a| %>
+          <div class="col-lg-12 py-2">
+              <div class="card" >
+              <div class="row">
+              <div class="col-lg-4 text-center">
+                      
+                  <h4 class="time-box"><span class="feather-32" data-feather="calendar"></span> 
+                      <br><%= a.date %> </h4>
+              </div>
+              <div class="col-lg-8">
+              <h4> Description: <%= a.description %></h4>
+              <hr>
+              <p> Time: <%= a.time %> </p>
+              <p> Location: <%= a.location %></p>
+              <p> ClientName: <%= a.client.name %></p>
+              <p> Employee name: <%= a.employee.name %></p>
+              </div>
+              </div>
+              <hr>
+               <%= link_to "Edit Appointment", edit_clientappointment_path(a) %>
+              </div>
+          </div>
+          <% end %>
+      </div>
+    </div>
+    </div>
+    </div>
+          </div>
+      <div class="tab-pane fade" id="nav-customer" role="tabpanel" aria-labelledby="nav-customer-tab">
+      <h2>Customer Appointments</h2>
+      <% @customerappointments.each do |a| %>
+          <div class="col-lg-12 py-2">
+              <div class="card" >
+              <div class="row">
+              <div class="col-lg-4 text-center">
+                      
+                  <h4 class="time-box"><span class="feather-32" data-feather="calendar"></span> 
+                      <br><%= a.date %> </h4>
+              </div>
+              <div class="col-lg-8">
+              <h4> Description: <%= a.description %></h4>
+              <hr>
+              <p> Time: <%= a.time %> </p>
+              <p> Location: <%= a.location %></p>
+              <p> Customer Name: <%= a.customer.name %></p>
+              <p> Employee name: <%= a.employee.name %></p>
+              </div>
+              </div>
+              <hr>
+               <%= link_to "Edit Appointment", edit_customerappointment_path(a) %>
+              </div>
+          </div>
+          <% end %>
+      </div>
+    </div>
+    </div>
+
+    </div>
+  
+  </div>
+</div>
+</div>
+
+<h2>Client Appointments</h2>
+        <% @clientappointments.each do |a| %>
             <div class="col-lg-12 py-2">
                 <div class="card" >
                 <div class="row">
@@ -18,7 +86,7 @@
                 <hr>
                 <p> Time: <%= a.time %> </p>
                 <p> Location: <%= a.location %></p>
-                <p> Client Name: <%= a.client.name %></p>
+                <p> ClientName: <%= a.client.name %></p>
                 <p> Employee name: <%= a.employee.name %></p>
                 </div>
                 </div>
@@ -29,21 +97,50 @@
             <% end %>
         </div>
     </div>
-        <div class="col-lg-4">
-        <div class="row">
-            <h2>Clients</h2>
-                <% @clients.each do |c| %>
-                    <div class="col-lg-12 py-2">
-                        <div class="card">
-                    <h4 class="text-center"><%= c.name %></h4>
-                    <hr>
-                    <p>Phone: <%= c.phone %></p>
-                    <p>Email: <%= c.email %></p>
-                    <hr>
-                    <%= link_to "Edit Client", edit_client_path(c) %><br>
-                    </div>
-                </div>
-                        <% end %>
-                </div>
+    </div>
+    <div class="hg_facebook skjul">
+    <h2>Customer Appointments</h2>
+    <% @customerappointments.each do |a| %>
+        <div class="col-lg-12 py-2">
+            <div class="card" >
+            <div class="row">
+            <div class="col-lg-4 text-center">
+                    
+                <h4 class="time-box"><span class="feather-32" data-feather="calendar"></span> 
+                    <br><%= a.date %> </h4>
+            </div>
+            <div class="col-lg-8">
+            <h4> Description: <%= a.description %></h4>
+            <hr>
+            <p> Time: <%= a.time %> </p>
+            <p> Location: <%= a.location %></p>
+            <p> Customer Name: <%= a.customer.name %></p>
+            <p> Employee name: <%= a.employee.name %></p>
+            </div>
+            </div>
+            <hr>
+             <%= link_to "Edit Appointment", edit_customerappointment_path(a) %>
             </div>
         </div>
+        <% end %>
+    </div>
+</div>
+</div>
+        # <div class="col-lg-4">
+        # <div class="row">
+        #     <h2>Clients</h2>
+        #         <% @clients.each do |c| %>
+        #             <div class="col-lg-12 py-2">
+        #                 <div class="card">
+        #             <h4 class="text-center"><%= c.name %></h4>
+        #             <hr>
+        #             <p>Phone: <%= c.phone %></p>
+        #             <p>Email: <%= c.email %></p>
+        #             <hr>
+        #             <%= link_to "Edit Client", edit_client_path(c) %><br>
+        #             </div>
+        #         </div>
+        #                 <% end %>
+        #         </div>
+        #     </div>
+        # </div>

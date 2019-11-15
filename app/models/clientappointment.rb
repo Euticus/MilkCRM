@@ -4,7 +4,9 @@ class Clientappointment < ApplicationRecord
     belongs_to :employee
 
     validates_date :date, :after => Time.now,  required: true
-    validates_time :time, :after => Time.now, :allow_nil => false
+    
+    validates_time :time, :allow_nil => false
+
 
   
 
