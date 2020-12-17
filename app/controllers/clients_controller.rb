@@ -1,20 +1,18 @@
 class ClientsController < ApplicationController
     def index
-      @clients = Client.all
-        
+      @clients = Client.all    
     end
 
     def show
-        @client = Client.find(params[:id])
-        
+        @client = Client.find(params[:id]) 
     end
 
     def new 
         @client = Client.new
       end 
   
-      def create
-        @client = Client.new(client_params)
+     def create
+       @client = Client.new(client_params)
         if @client.save
           redirect_to client_path(@client)
         else
@@ -27,7 +25,7 @@ class ClientsController < ApplicationController
     end
 
     def update
-        @client = Client.find(params[:id])
+       @client = Client.find(params[:id])
        if @client.update(client_params)
         redirect_to client_path(@client)
        else 
@@ -40,7 +38,6 @@ class ClientsController < ApplicationController
       @client = Client.find(params[:id])
       @client.destroy
       redirect_to clients_path
-
     end 
 
     private 
