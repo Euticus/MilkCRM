@@ -5,6 +5,7 @@ class WelcomesController < ApplicationController
     def index
         @employees = Employee.all
         @clients = Client.all
+        @customers = Customer.all
         @clientappointments = Clientappointment.all
         @customerappointments = Customerappointment.all
         @employee = Employee.find(session[:employee_id])

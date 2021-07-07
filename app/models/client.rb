@@ -2,6 +2,7 @@ class Client < ApplicationRecord
 
     has_many :employees, through: :clientappointments, dependent: :destroy
     has_many :products
+    has_one_attached :image
 
     validates :name, presence: true 
     validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP } # I think RFC 5322
